@@ -1,0 +1,101 @@
+  
+  button {
+
+      padding: 14px 28px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    body {
+      justify-content: center;
+      align-items: center;
+      border: 5px solid red;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+    }
+    header {
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 48px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: 300;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 18px;
+      font-family: 'Courier New', Courier, monospace;
+      transition: color 0.3s ease;
+    }
+    img {
+       max-width: 50%;
+       height: 100%;
+       border: 2px solid #d81212;
+       border-radius: 10px;
+    }
+    .container {
+      display: flex; 
+      gap: 10px;
+      width: 100%;
+    }
+
+    .box1 {
+      height: 300px;
+      text-align: center;
+      line-height: 100px;
+      color: white;
+      font-weight: bold;
+      width: 35%;
+    }    
+    .box2 {
+      height: 300px;
+      text-align: center;
+      color:black;
+      font-weight: bold;
+      width: 65%;
+      border: 2px solid #d81212;
+    }    
+    .box3 {
+      height: 300px;
+      text-align: center;
+      color: black;
+      font-weight: bold;
+      width: 65%;
+      border: 2px solid #d81212;
+    }    
+    .box4 {
+      border: 2px solid #d81212;
+      height: 300px;
+      width: 65%;
+      text-align: center;
+      color:black;
+      font-weight: bold;
+    }
