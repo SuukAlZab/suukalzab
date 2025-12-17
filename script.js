@@ -1,52 +1,31 @@
-
+// زر التحميل
 document.getElementById("downloadBtn").addEventListener("click", function () {
   const a = document.createElement("a");
-  a.href = "suukalzab.apk";
+  a.href = "suukalzab.apk"; // تأكد من وجود الملف في نفس المجلد
+  a.download = "suukalzab.apk";
   a.click();
-  // Clean up
-  URL.revokeObjectURL(url);
 });
-    document.getElementById("mylink1").addEventListener("click", function(event) {
-    event.preventDefault(); 
 
-    document.getElementById("mylink1").style.color = "red";
-    document.getElementById("mylink2").style.color = "white";
-    document.getElementById("mylink3").style.color = "white";
-
-    document.getElementById("mybox2").style.display = "";
-    document.getElementById("mybox3").style.display = "none";
-    document.getElementById("mybox4").style.display = "none";
+// تغيير الصناديق والألوان
+function showBox(selected) {
+  const boxes = ["mybox2", "mybox3", "mybox4"];
+  const links = ["mylink1", "mylink2", "mylink3"];
+  
+  boxes.forEach((id, index) => {
+    document.getElementById(id).style.display = (index === selected) ? "" : "none";
   });
-    document.getElementById("mylink2").addEventListener("click", function(event) {
-    event.preventDefault();
-
-    document.getElementById("mylink1").style.color = "white";
-    document.getElementById("mylink2").style.color = "red";
-    document.getElementById("mylink3").style.color = "white";
-
-    document.getElementById("mybox2").style.display = "none";
-    document.getElementById("mybox3").style.display = "";
-    document.getElementById("mybox4").style.display = "none";
+  
+  links.forEach((id, index) => {
+    document.getElementById(id).style.color = (index === selected) ? "red" : "white";
   });
-    document.getElementById("mylink3").addEventListener("click", function(event) {
-    event.preventDefault(); 
+}
 
-    document.getElementById("mylink1").style.color = "white";
-    document.getElementById("mylink2").style.color = "white";
-    document.getElementById("mylink3").style.color = "red";
+// إضافة أحداث النقر
+document.getElementById("mylink1").addEventListener("click", e => { e.preventDefault(); showBox(0); });
+document.getElementById("mylink2").addEventListener("click", e => { e.preventDefault(); showBox(1); });
+document.getElementById("mylink3").addEventListener("click", e => { e.preventDefault(); showBox(2); });
 
-    document.getElementById("mybox2").style.display = "none";
-    document.getElementById("mybox3").style.display = "none";
-    document.getElementById("mybox4").style.display = "";
-  });
-  window.onload = function() {
-      
-    document.getElementById("mylink1").style.color = "red";
-    document.getElementById("mylink2").style.color = "white";
-    document.getElementById("mylink3").style.color = "white";
-
-    document.getElementById("mybox2").style.display = "";
-    document.getElementById("mybox3").style.display = "none";
-    document.getElementById("mybox4").style.display = "none";
-      
-  };
+// إعداد الصفحة عند التحميل
+window.onload = function() {
+  showBox(0);
+};

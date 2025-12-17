@@ -1,26 +1,23 @@
   
-  button {
 
-      padding: 14px 28px;
-      font-size: 18px;
-      font-weight: bold;
-      color: white;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
+body {
+    justify-content: center;
+    align-items: center;
+    border: 5px solid red;           /* إذا أردت إبقاء الحدود */
+    height: 100%;
+    font-family: 'Tajawal', sans-serif; /* خط عربي جميل */
+    font-size: 16px;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
-    body {
-      justify-content: center;
-      align-items: center;
-      border: 5px solid red;
-      height: 100%;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-    }
+
+
     header {
       background: linear-gradient(135deg, #6e8efb, #a777e3);
       color: white;
@@ -28,6 +25,8 @@
       text-align: center;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
+
+ 
 
     header h1 {
       margin: 0;
@@ -47,7 +46,7 @@
     }
 
     nav a {
-      color: white;
+      color: rgb(214, 18, 18);
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
@@ -55,47 +54,106 @@
       font-family: 'Courier New', Courier, monospace;
       transition: color 0.3s ease;
     }
+
     img {
        max-width: 50%;
        height: 100%;
        border: 2px solid #d81212;
        border-radius: 10px;
     }
+/* Container for all boxes */
+.container {
+    display: flex;
+    width: 100%;
+    gap: 10px; /* مسافة بين الصناديق */
+}
+
+/* Box1 occupying 30% of width */
+.box1 {
+    width: 30%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between; /* توزيع الصور لتملأ الصندوق بالكامل */
+    align-items: center;
+    gap: 0; /* مسافة بين الصور يمكن التحكم بها */
+}
+
+/* Each image inside box1 */
+.box1 .box-img {
+    width: 32%;        /* كل صورة تأخذ حوالي ثلث الصندوق مع بعض الفجوة */
+    height: 100%;      /* تملأ ارتفاع الصندوق بالكامل */
+    object-fit: cover; /* يحافظ على النسبة ويقص إذا لزم */
+    display: block;
+}
+
+
+/* Boxes 2, 3, 4 share remaining space vertically */
+.right-boxes {
+    width: 70%; /* الباقي من مساحة الصفحة */
+    display: flex;
+    flex-direction: column; /* تصطف عمودياً */
+    gap: 20px;
+}
+
+/* Each of Boxes 2, 3, 4 */
+.box2, .box3, .box4 {
+    flex: 1;               /* تملأ المساحة المتاحة بالتساوي */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: auto;
+    text-align: right;
+}
+
+#downloadBtn {
+  display: block;
+  margin: 30px auto; /* يوسّط الزر */
+  padding: 15px 40px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* تدرج برتقالي جميل */
+  border: none;
+  border-radius: 50px; /* يجعل الزر دائري الأطراف */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#downloadBtn:hover {
+  background-color: #218838; /* عند التحويم يتغير اللون */
+  transform: translateY(-2px);
+}
+
+/* تأثير عند الضغط */
+#downloadBtn:active {
+  transform: scale(0.95);
+}
+
+/* تفاعل مع الشاشات الصغيرة */
+@media (max-width: 768px) {
     .container {
-      display: flex; 
-      gap: 10px;
-      width: 100%;
+        flex-direction: column; /* ترتيب الصناديق عموديًا */
+    }
+
+    .box1, .right-boxes {
+        width: 100%; /* كل الصناديق تملأ العرض */
     }
 
     .box1 {
-      height: 300px;
-      text-align: center;
-      line-height: 100px;
-      color: white;
-      font-weight: bold;
-      width: 35%;
-    }    
-    .box2 {
-      height: 300px;
-      text-align: center;
-      color:black;
-      font-weight: bold;
-      width: 65%;
-      border: 2px solid #d81212;
-    }    
-    .box3 {
-      height: 300px;
-      text-align: center;
-      color: black;
-      font-weight: bold;
-      width: 65%;
-      border: 2px solid #d81212;
-    }    
-    .box4 {
-      border: 2px solid #d81212;
-      height: 300px;
-      width: 65%;
-      text-align: center;
-      color:black;
-      font-weight: bold;
+        flex-direction: column; /* الصور والفيديو تتراص عموديًا */
+        height: auto;           /* ارتفاع تلقائي حسب المحتوى */
+        gap: 10px;
     }
+
+    .box1 .box-img {
+        width: 100%;   /* كل صورة أو فيديو تملأ عرض Box1 */
+        height: 200px; /* ارتفاع مناسب للهواتف */
+    }
+
+    .box2, .box3, .box4 {
+        height: auto;  /* ارتفاع تلقائي حسب المحتوى */
+    }
+}
+
