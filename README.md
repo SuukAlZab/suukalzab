@@ -1,2 +1,1 @@
-# suukalzab
-An online marketplace specific to the Lower Zab region
+1.0
