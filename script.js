@@ -2,7 +2,7 @@
 document.getElementById("downloadBtn").addEventListener("click", function () {
   const a = document.createElement("a");
   a.href = "suukalzab_1_0.apk"; // تأكد من وجود الملف في نفس المجلد
-  a.download = "suukalzab.apk";
+  a.download = "suukalzab_1_0.apk";
   a.click();
 });
 
@@ -29,6 +29,7 @@ document.getElementById("mylink3").addEventListener("click", e => { e.preventDef
 window.onload = function() {
   showBox(0);
 };
+
 
 
 
